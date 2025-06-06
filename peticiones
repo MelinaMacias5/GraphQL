@@ -1,0 +1,71 @@
+///////////////////////////
+query AllPosts {
+  listPosts {
+    success
+    errors
+    posts {
+      id
+      title
+      description
+      created_at
+    }
+  }
+}
+
+//////////////////////////
+mutation CreateNewPost {
+  createPost(
+    title: "New Blog Post",
+    description:"Some Description") {
+    post {
+      id
+      title
+      description
+      created_at
+    }
+    success
+    errors
+  }
+}
+
+
+///////////////////////////////
+query GetPost {
+  getPost(id: "1") {
+    post {
+      id
+      title
+      description
+    }
+    success
+    errors
+  }
+}
+
+
+/////////////////////////////////
+mutation UpdatePost {
+  updatePost(id:"2", title:"Hello title", description:"updated description") {
+    post {
+      id
+      title
+      description
+    }
+    success
+    errors
+  }
+}
+
+
+/////////////////////////////////////////
+mutation DeletePost {
+  deletePost(id:"2") {
+    post {
+      id
+      title
+      description
+    }
+    success
+    errors
+  }
+}
